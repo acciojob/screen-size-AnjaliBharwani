@@ -1,10 +1,16 @@
-//your JS code here. If required.
-function updateSizeInfo(){
-window.addEventListener("resize", getscreensize);
+//your JS code here. If required
+ function updateWindowSize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
 
-function getscreensize(){
-	let element = document.getElementById("sizeInfo");
-	let x = document.documentElement.clientWidth;
-	let y = document.documentElement.clientHeight;
-	element.innerHTML= `<h1>Width: ${x} and Height: ${y}</h1>`;
-}
+      const sizeInfo = document.getElementById("sizeInfo");
+      const h1 = sizeInfo.querySelector("h1");
+
+      h1.textContent = `Width: ${width} Height: ${height}`;
+    }
+
+    // Initial update
+    updateWindowSize();
+
+    // Add a resize event listener to update the size on window resize
+    window.addEventListener("resize", updateWindowSize);
