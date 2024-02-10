@@ -1,20 +1,17 @@
- window.onload = function() {
-      // Function to update size information
-      function updateSize() {
-        // Get the div element by its ID
-        const sizeInfo = document.getElementById('sizeInfo');
-        
-        // Get the window width and height
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-        
-        // Update the content of the <h1> tag inside the div
-        sizeInfo.innerHTML = `<h1>Width: ${width} and Height: ${height}</h1>`;
-      }
-      
-      // Call the updateSize function initially to set the initial size
-      updateSize();
-      
-      // Add an event listener to update the size whenever the window is resized
-      window.addEventListener('resize', updateSize);
-    };
+//your JS code here. If required.
+ function updateWindowSize() {
+            const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            const height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+            // Update the content with the current window size
+            document.getElementById('width').textContent = width;
+            document.getElementById('height').textContent = height;
+        }
+
+        // Initial call to set the window size
+        updateWindowSize();
+
+        // Attach an event listener to update the size whenever the window is resized
+        window.addEventListener('resize', updateWindowSize);
+        // Attach an event listener to update the size whenever the window is resized
+        window.addEventListener('resize', updateWindowSize);
